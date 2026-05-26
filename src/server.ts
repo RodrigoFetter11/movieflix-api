@@ -1,11 +1,14 @@
 import express from "express";
 import { PrismaClient } from "@prisma/client";
+import swaggerUi from "swagger-ui-express";
+import swaggerDocument from "./swagger.json";
 
 const port = 3000;
 const app = express();
 const prisma = new PrismaClient();
 
 app.use(express.json());
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 app.get("/movies", async (_, res) => {
@@ -123,5 +126,5 @@ app.get("/movies/:genderName", async(req, res) => {
 });
 
 app.listen(port, () => {
-     console.log(`Servidor em execução na porta ${port}`);
+     console.log(`Servidor em execução http://localhost:${port}`);
 });

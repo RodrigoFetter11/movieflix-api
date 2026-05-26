@@ -7,11 +7,12 @@
      "module": "commonjs",
     "target": "ES2020",
     "esModuleInterop": true,
+    "resolveJsonModule": true,
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
+    // "module": "nodenext",
+    // "target": "esnext",
     "types": ["node"],
     // For nodejs:
     // "lib": ["esnext"],
